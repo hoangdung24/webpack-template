@@ -1,0 +1,301 @@
+/* ========== DEFINE ROOT ========== */
+:root {
+    --primary-color: #F8F9FA;
+    --secondary-color: #E9ECEF;
+    --tertiary-color: #DEE2E6;
+    --text-color: #212529;
+    --text-light-color: #343A40;
+    --container-color: #CED4DA;
+    --container-alt-color: #DEE2E6;
+    --body-color: #ebebeb;
+    --np-first-color: #c1c2c3;
+    --np-secondary-color: #fff;
+}
+
+/* ========== CUSTOMIZE SCROLLBAR ========== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: .9375rem;
+}
+
+.c-wrapper {
+    position: relative;
+    color: var(--text-color);
+    background-color: var(--body-color);
+}
+
+.c-wrapper.dark__theme {
+    --primary-color: #212529;
+    --secondary-color: #343A40;
+    --tertiary-color: #495057;
+    --text-color: #DEE2E6;
+    --text-light-color: #6C757D;
+    --container-color: #F8F9FA;
+    --container-alt-color: #E9ECEF;
+    --body-color: #212529;
+    --np-first-color: #111315;
+    --np-secondary-color: #32383e;
+}
+
+.c-body {
+    padding: 1rem;
+}
+
+.c-main {
+    padding-top: unset;
+}
+
+.row {
+    margin: 0;
+    justify-content: space-between;
+}  
+
+.clear-wrap {
+    flex-wrap: nowrap;
+}
+
+.adjust-container {
+    height: calc(100vh - 2rem);
+}
+
+
+/* ========== NEUMORPHISM ========== */
+.np-out-container {
+    box-shadow: 6px 6px 12px var(--np-first-color), -6px -6px 12px var(--np-secondary-color);
+}
+
+.np-in-container {
+    box-shadow: inset 5px 5px 10px var(--np-first-color), inset -5px -5px 10px var(--np-secondary-color);
+}
+
+.np-out-btn {
+    box-shadow: 2px 2px 5px var(--np-first-color), -2px -2px 5px var(--np-secondary-color);
+}
+
+.np-in-btn {
+    box-shadow: inset 3px 3px 6px var(--np-first-color), inset -3px -3px 6px var(--np-secondary-color);
+}
+
+.np-out-card {
+    box-shadow: 3px 3px 6px var(--np-first-color),-3px -3px 6px var(--np-secondary-color);
+}
+
+.np-in-card {
+    box-shadow: inset 3px 3px 6px var(--np-first-color), inset -3px -3px 6px var(--np-secondary-color);
+}
+
+
+.searchbar {
+    position: relative;
+    border-radius: .375rem;
+    overflow: hidden;
+    
+    .searchbar__inner {
+        padding: 0.5rem;
+        // background-color: var(--tertiary-color);
+    
+        .searchbar__icon {
+            width: 1rem;
+        }
+
+        .searchbar__input {
+            width: 100%;
+            padding: 0;
+            padding-left: 0.5rem;
+            height: 100%;
+            border: unset;
+            outline: unset;
+            background-color: unset;
+            color: var(--text-color);
+        }
+    }
+    
+}
+
+.note__field {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 1rem;
+    border: none;
+    color: var(--text-color);
+
+    &:focus {
+        outline: none;
+        border: none;
+        background-color: none;
+        border-color: unset;
+    }
+
+}
+
+/* =========== CATEGORY SELECTED =========== */
+
+.category__item {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    // border: 1px solid var(--secondary-color);
+    margin-right: 0.5rem;
+    // transition: 0.2s;
+    cursor: pointer;
+    user-select: none;
+
+    &.categorySelected {
+        color: var(--text-color);
+        // background-color: var(--secondary-color);
+        // border: transparent;
+    }
+    
+}
+
+.toggleIcon {
+    cursor: pointer;
+}
+
+/* =========== POST CARD =========== */
+.post__card {
+    border-radius: 0.75rem;
+    // transition: 0.3s;
+
+    &:hover {
+        transform: translateY(-0.1rem);
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    .card {
+        width: 95%;
+        margin: 0 auto;
+        border: unset;
+        background-color: unset;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        color: var(--text-color);
+    }
+
+    .card-text {
+        color: var(--text-color);
+    }
+}
+
+/* =========== ABOUT US  =========== */
+.about {
+    .about__logo {
+        display: flex;
+        justify-content: center;
+
+        .about__icon {
+            height: 10rem !important;
+            width: 10rem !important;
+            // align-self: center;
+        }
+    }
+
+}
+
+
+/* =========== SINGLE POST =========== */
+.single-post {
+
+    .single-post__inner {
+        overflow: hidden;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .single-post__image {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        height: 350px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+}
+
+
+/* =========== CUSTOMIZE CONTAINER WIDTH =========== */
+.adjust-col-width {
+    @include minWidth(992px) {
+        max-width: 47%;
+        flex-basis: 47%;
+    }
+}
+
+.container-mid {
+    // margin-left: 2rem;
+}
+
+.container-right {
+    .container-right__content {
+        justify-content: center;
+    }
+}
+
+/* =========== LEFT WIDGET =========== */
+.left-widget {
+    width: 95%;
+}
+
+/* =========== SUBSCRIBE =========== */
+.subscribe {
+
+    .subscribe__input {
+        outline: none;
+        background-color: unset;
+        border: none;
+        padding: 1rem 0 1rem 1rem;
+        border-radius: 0.5rem;
+        color: var(--text-color);
+    }
+
+    .subscribe__button {
+        border: none;
+        outline: none;
+        background-color: unset;
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        color: var(--text-color);
+        border-radius: 0.5rem;
+        // transition: 0.3s;
+
+        &:hover {
+            box-shadow: inset 3px 3px 6px var(--np-first-color), inset -3px -3px 6px var(--np-secondary-color);
+        }
+    }
+}
+
+/* =========== SOCIAL =========== */
+.social {
+    .social__icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: inset 3px 3px 6px var(--np-first-color), inset -3px -3px 6px var(--np-secondary-color);
+        }
+    }
+}
+/* =========== ADJUST WIDTH =========== */
+.adjust-width {
+    width: 95%;
+    justify-self: center;
+}
+/* ===========  =========== */
+
